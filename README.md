@@ -1,3 +1,5 @@
+
+# pytorch-tutorials
 <p align="center"><img width="40%" src="logo/pytorch_logo.png" /></p>
 
 --------------------------------------------------------------------------------
@@ -33,7 +35,6 @@ This repository provides tutorial code for deep learning researchers to learn [P
 * [TensorBoard in PyTorch](https://github.com/yunjey/pytorch-tutorial/tree/master/tutorials/04-utils/tensorboard)
 
 
-
 <br/>
 
 ## Getting Started
@@ -50,10 +51,20 @@ $ python main-gpu.py           # gpu version
 * [Python 2.7 or 3.5](https://www.continuum.io/downloads)
 * [PyTorch 0.1.12](http://pytorch.org/)
 
-
-
 <br/>
 
-
-## Author
-Yunjey Choi/ [@yunjey](https://github.com/yunjey)
+## Pre-Processing
+   - imaqeLoader/transforms.py
+   
+## Load the images 
+   - imageLoader/cifar10.py
+   - imageLoader/myImageLoader.py loader.py
+   
+## ConvNet
+   - nets/*
+   
+## Train
+   - train/*
+   
+## TransferLearning
+   - transferLearning/*
