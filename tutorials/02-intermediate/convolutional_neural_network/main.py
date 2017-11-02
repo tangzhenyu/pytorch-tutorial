@@ -3,7 +3,7 @@ import torch.nn as nn
 import torchvision.datasets as dsets
 import torchvision.transforms as transforms
 from torch.autograd import Variable
-
+import sys
 
 # Hyper Parameters
 num_epochs = 5
@@ -11,12 +11,12 @@ batch_size = 100
 learning_rate = 0.001
 
 # MNIST Dataset
-train_dataset = dsets.MNIST(root='./data/',
+train_dataset = dsets.MNIST(root='/data/mnist',
                             train=True, 
                             transform=transforms.ToTensor(),
                             download=True)
 
-test_dataset = dsets.MNIST(root='./data/',
+test_dataset = dsets.MNIST(root='/data/mnist',
                            train=False, 
                            transform=transforms.ToTensor())
 
@@ -47,6 +47,7 @@ class CNN(nn.Module):
         
     def forward(self, x):
         out = self.layer1(x)
+        print(out.size())
         out = self.layer2(out)
         out = out.view(out.size(0), -1)
         out = self.fc(out)
@@ -69,6 +70,8 @@ for epoch in range(num_epochs):
         optimizer.zero_grad()
         outputs = cnn(images)
         loss = criterion(outputs, labels)
+
+        sys.exit()
         loss.backward()
         optimizer.step()
         

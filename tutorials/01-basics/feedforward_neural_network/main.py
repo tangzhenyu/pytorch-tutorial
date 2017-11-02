@@ -48,7 +48,6 @@ class Net(nn.Module):
     
 net = Net(input_size, hidden_size, num_classes)
 
-    
 # Loss and Optimizer
 criterion = nn.CrossEntropyLoss()  
 optimizer = torch.optim.Adam(net.parameters(), lr=learning_rate)  
